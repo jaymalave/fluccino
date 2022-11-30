@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:card_swiper/card_swiper.dart';
+import 'package:coffe/controllers/fetchCoffees.dart';
 import 'package:coffe/items/bottomnavi.dart';
 import 'package:coffe/model/dataCoffee.dart';
 import 'package:coffe/model/itemscoffee.dart';
@@ -25,6 +26,7 @@ class _CoffeePageState extends State<CoffeePage>
   void initState() {
     // TODO: implement initState
     super.initState();
+    print(FetchCoffeeData().getCoffees());
     _controller = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 600));
     _priceofcoffee = Tween(begin: 0.0, end: 0.5).animate(_controller)
@@ -75,11 +77,11 @@ class _CoffeePageState extends State<CoffeePage>
                     width: we * 0.02,
                   ),
                   const Text(
-                    "Lagos,",
+                    "Mumbai,",
                     style: TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.black),
                   ),
-                  const Text("Nigeria", style: TextStyle(color: Colors.black)),
+                  const Text("India", style: TextStyle(color: Colors.black)),
                   SizedBox(
                     width: we * 0.27,
                   ),
