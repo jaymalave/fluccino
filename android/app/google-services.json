@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "20279351641",
+    "project_id": "fluccino",
+    "storage_bucket": "fluccino.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20279351641:android:8f178bb4290204647bd448",
+        "android_client_info": {
+          "package_name": "com.example.coffe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20279351641-4uqit6kc890co8252lv2fso0c4236gba.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3LMK_GPrdTYoNijlPSablfSFfg3KRFtM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20279351641-4uqit6kc890co8252lv2fso0c4236gba.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
