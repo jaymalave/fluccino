@@ -1,5 +1,6 @@
 import 'package:another_transformer_page_view/another_transformer_page_view.dart';
 import 'package:coffe/pages/homepage.dart';
+import 'package:coffe/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -27,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 fit: BoxFit.cover)),
         child: Stack(alignment: Alignment.center, children: [
           TransformerPageView(
-            physics: const BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               transformer: ScaleAndFadeTransformer(),
               pageController: controller,
               itemBuilder: (c, index) {
@@ -74,14 +75,22 @@ class _MyHomePageState extends State<MyHomePage> {
             top: he * 0.89,
             child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      PageTransition(
-                          child: const CoffeePage(), type: PageTransitionType.fade));
+                  // Navigator.pushReplacement(
+                  //   context,
+                  //   PageTransition(
+                  //       child: const CoffeePage(),
+                  //       type: PageTransitionType.fade),
+                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Login(),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.orangeAccent,
-                    padding:  EdgeInsets.symmetric(
+                    padding: EdgeInsets.symmetric(
                         horizontal: we * 0.3, vertical: 25),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(40))),
