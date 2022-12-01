@@ -15,9 +15,7 @@ class Login extends StatelessWidget {
           // logo
           Column(
             children: [
-              FlutterLogo(
-                size: 55,
-              ),
+             Image.asset('images/pngegg.png', height: 200,),
               SizedBox(height: 50),
               Text(
                 'Welcome back!',
@@ -48,8 +46,8 @@ class Login extends StatelessWidget {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Signup()));
                 },
-                child: Text('Get Registered Now!!',
-                    style: TextStyle(fontSize: 20, color: Colors.blue)),
+                child: const Text('Get Registered Now!!',
+                    style: TextStyle(fontSize: 20, color: Color(0xFFD59B6B))),
               )
             ],
           ),
@@ -84,12 +82,12 @@ class _LoginFormState extends State<LoginForm> {
           // email
           TextFormField(
             // initialValue: 'Input text',
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               prefixIcon: Icon(Icons.email_outlined),
               labelText: 'Email',
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.all(
-                  const Radius.circular(100.0),
+                  Radius.circular(100.0),
                 ),
               ),
             ),
@@ -173,6 +171,7 @@ class _LoginFormState extends State<LoginForm> {
                 }
               },
               style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFFD09B6B),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(24.0)))),
               child: Text(

@@ -14,8 +14,9 @@ class Signup extends StatelessWidget {
           // logo
           Column(
             children: [
-              FlutterLogo(
-                size: 55,
+              Image.asset(
+                'images/pngegg.png',
+                height: 150,
               ),
             ],
           ),
@@ -44,7 +45,10 @@ class Signup extends StatelessWidget {
                         Navigator.pop(context);
                       },
                       child: Text(' Get Logged in Now!',
-                          style: TextStyle(fontSize: 20, color: Colors.blue)),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: const Color(0xFFD09B6B),
+                          )),
                     )
                   ],
                 )
@@ -193,6 +197,8 @@ class _SignupFormState extends State<SignupForm> {
           Row(
             children: <Widget>[
               Checkbox(
+                activeColor: const Color(0xFFD09B6B),
+                checkColor: Colors.black,
                 onChanged: (_) {
                   setState(() {
                     agree = !agree;
@@ -200,7 +206,7 @@ class _SignupFormState extends State<SignupForm> {
                 },
                 value: agree,
               ),
-              Flexible(
+              const Flexible(
                 child: Text(
                     'By creating account, I agree to Terms & Conditions and Privacy Policy.'),
               ),
@@ -239,6 +245,7 @@ class _SignupFormState extends State<SignupForm> {
                 }
               },
               style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFD09B6B),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(24.0)))),
               child: Text('Sign Up'),
