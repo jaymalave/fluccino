@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:card_swiper/card_swiper.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:coffe/controllers/fetchCoffees.dart';
 import 'package:coffe/items/bottomnavi.dart';
 import 'package:coffe/model/dataCoffee.dart';
@@ -21,12 +22,30 @@ class _CoffeePageState extends State<CoffeePage>
   late Animation<double> _priceofcoffee;
   late AnimationController _controller;
   String icon = "";
+  CollectionReference coffees =
+      FirebaseFirestore.instance.collection('coffees');
+  List<dynamic> coffeeList = [];
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    print(FetchCoffeeData().getCoffees());
+    void getCoffees() async {
+      await coffees.get().then(
+            (value) => {
+              setState(() {
+                coffeeList = value.docs;
+              }),
+              // print(coffeeList[0]['coffeeName']),
+            },
+          );
+    }
+
+    setState(() {
+      getCoffees();
+    });
+
+    // print(FetchCoffeeData().getCoffees());
     _controller = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 600));
     _priceofcoffee = Tween(begin: 0.0, end: 0.5).animate(_controller)
